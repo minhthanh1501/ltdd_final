@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FinalProject</string>
+    <string name="add_cart">Add Cart</string>
+    <string name="gi_200000">Giá : 200000đ</string>
+    <string name="ng_nh_p">Đăng nhập</string>
+    <string name="ng_k">Đăng Ký</string>
+</resources>
