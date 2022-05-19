@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,8 @@ public class CartActivity extends AppCompatActivity {
     CartAdapter adapter;
     List<Cart> ListCart;
 
+    long tongtiencart = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void totalMoney() {
-        long tongtiencart = 0;
+        tongtiencart = 0;
         for (int i = 0; i < Utils.manggiohang.size(); i++) {
             tongtiencart = tongtiencart + (Utils.manggiohang.get(i).getGiasp()* Utils.manggiohang.get(i).getSoluong());
         }
@@ -73,6 +76,15 @@ public class CartActivity extends AppCompatActivity {
             adapter = new CartAdapter(getApplicationContext(),Utils.manggiohang);
             recyclerView.setAdapter(adapter);
         }
+
+        btnmuahang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),PayMentActivity.class);
+                intent.putExtra("tongtien",tongtiencart);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initView() {

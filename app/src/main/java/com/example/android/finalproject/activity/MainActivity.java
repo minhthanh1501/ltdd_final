@@ -104,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
                         Intent trangchu = new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(trangchu);
                         break;
+                    case 5:
+                        Intent donhang = new Intent(getApplicationContext(),viewBillActivity.class);
+                        startActivity(donhang);
+                        break;
                 }
             }
         });
